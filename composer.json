@@ -1,0 +1,28 @@
+{
+    "name": "glukash/glu-image",
+    "description": "",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lukasz Gaszyna",
+            "email": "glukash@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*",
+        "intervention/image": "2.*",
+        "sybio/gif-frame-extractor": "1.*",
+        "sybio/gif-creator": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Glukash\\GluImage": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable"
+}
