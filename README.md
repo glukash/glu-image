@@ -7,11 +7,11 @@ The package includes ServiceProvider and Facade for easy **Laravel 4** integrati
 
 ##Purpose
 
-The package supports two image manipulation methods: resize and crop.
-The main purpose is to easly resize and crop jpg, png, and gif images.
-The sweetness is that it supports animated gif using GD Library. (No Imagick, Gmagick is needed).
+- The package supports two image manipulation methods: resize and crop.
+- Easly resize and crop jpg, png, and gif images.
+- Supports animated gif using GD Library. (No Imagick, Gmagick is needed).
 
-## Uses
+## Dependencies
 
 The package uses:
 
@@ -41,6 +41,21 @@ To install through composer, put the following in your `composer.json` file:
 	}
 }
 ```
+
+if you will not add:
+```json
+{
+	"repositories": [
+	    {
+	        "type": "git",
+	        "url": "https://github.com/glukash/GifCreator"
+	    }
+	]
+}
+```
+You will pull the original [Sybio/GifCreator](https://github.com/Sybio/GifCreator) and will not be able to chain methods on gif files after first save().
+
+## Laravel Integration
 
 Add `Intervention\Image` and `Glukash\GluImage` service providers in `app/config/app.php`.
 
@@ -79,23 +94,37 @@ This is not a necessary step for using `GluImage`.
 ## Code Examples
 
 ```php
-GluImage::get( public_path().'/img/01.jpg' )
-	->resize(540,360)
-	->save( public_path().'/img/01-resized1.jpg' )
-	->resize(360,220)
-	->save( public_path().'/img/01-resized2.jpg' );
 
-GluImage::get( public_path().'/img/01.gif' )
-	->resize(540,360)
-	->save( public_path().'/img/01-resized.gif' )
-	->crop(360,220)
-	->save( public_path().'/img/01-resized-and-cropped.gif' );
-
-$img = GluImage::get( public_path().'/img/01.jpg' );
+$img = GluImage::get( $path_to_images.'/01.jpg' );
 $img->resize(540,360);
-$img->save( public_path().'/img/01-resized.jpg' );
-$img->crop(220,220);
-$img->save( public_path().'/img/01-cropped.jpg' );
+$img->save( $path_to_images.'/01-resized.jpg' );
+
+// ...
+
+GluImage::get( $path_to_images.'/01.jpg' )->resize(540,360)->save( $path_to_images.'/01-resized.jpg' );
+
+// ...
+
+GluImage::get( $path_to_images.'/01.jpg' )->crop(540,360)->save( $path_to_images.'/01-resized.jpg' );
+
+// ...
+
+// one chain creates two different files
+GluImage::get( $path_to_images.'/01.jpg' )
+	->resize(540,360)
+	->save( $path_to_images.'/01-resized1.jpg' )
+	->resize(360,220)
+	->save( $path_to_images.'/01-resized2.jpg' );
+
+// ...
+
+// chain another methods after save() method for gif files is available only with forked version of GifCreator
+GluImage::get( $path_to_images.'/01.gif' )
+	->resize(540,360)
+	->save( $path_to_images.'/01-resized.gif' )
+	->crop(360,220)
+	->save( $path_to_images.'/01-resized-and-cropped.gif' );
+
 ```
 
 
