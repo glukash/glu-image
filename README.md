@@ -42,7 +42,7 @@ To install through composer, put the following in your `composer.json` file:
 }
 ```
 
-Without adding the "repositories" key, composer will pull the original [Sybio/GifCreator](https://github.com/Sybio/GifCreator) and you will not be able to chain methods on gif files after first save().
+Without adding the "repositories" key, composer will pull the original [Sybio/GifCreator](https://github.com/Sybio/GifCreator) and you will not be able to chain methods on animated gif files after first save().
 ```json
 {
 	"repositories": [
@@ -117,7 +117,7 @@ GluImage::get( $path_to_images.'/01.jpg' )
 
 // ...
 
-// chain another methods after save() method for gif files is available only with forked version of GifCreator
+// chain another methods after save() method for animated gif files is available only with forked version of GifCreator
 GluImage::get( $path_to_images.'/01.gif' )
 	->resize(540,360)
 	->save( $path_to_images.'/01-resized.gif' )
