@@ -103,7 +103,7 @@ GluImage::get( $path_to_images.'/01.jpg' )->resize(540,360)->save( $path_to_imag
 
 // ...
 
-GluImage::get( $path_to_images.'/01.jpg' )->crop(540,360)->save( $path_to_images.'/01-resized.jpg' );
+GluImage::get( $path_to_images.'/01.jpg' )->crop(540,360)->save( $path_to_images.'/01-cropped.jpg' );
 
 // ...
 
