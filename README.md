@@ -46,7 +46,6 @@ Add `Intervention\Image` and `Glukash\GluImage` service providers in `app/config
 'providers' => array(
 
 	// ...
-	
 	'Intervention\Image\ImageServiceProvider',
 	'Glukash\GluImage\GluImageServiceProvider',
 ),
@@ -83,13 +82,13 @@ GluImage::get( public_path().'/img/01.jpg' )
 	->save( public_path().'/img/01-resized1.jpg' )
 	->resize(360,220)
 	->save( public_path().'/img/01-resized2.jpg' );
-	
+
 GluImage::get( public_path().'/img/01.gif' )
 	->resize(540,360)
 	->save( public_path().'/img/01-resized.gif' )
 	->crop(360,220)
 	->save( public_path().'/img/01-resized-and-cropped.gif' );
-	
+
 $img = GluImage::get( public_path().'/img/01.jpg' );
 $img->resize(540,360);
 $img->save( public_path().'/img/01-resized.jpg' );
