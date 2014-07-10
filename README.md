@@ -117,7 +117,8 @@ GluImage::get( $path_to_images.'/01.jpg' )
 
 // ...
 
-// chain another methods after save() method for animated gif files is available only with forked version of GifCreator
+// chain another methods after save() method for animated gif files 
+// is available only with forked version of GifCreator
 GluImage::get( $path_to_images.'/01.gif' )
 	->resize(540,360)
 	->save( $path_to_images.'/01-resized.gif' )
