@@ -42,7 +42,7 @@ To install through composer, put the following in your `composer.json` file:
 }
 ```
 
-Without adding the repositories key, composer will pull the original [Sybio/GifCreator](https://github.com/Sybio/GifCreator) and you will not be able to chain methods on gif files after first save().
+Without adding the "repositories" key, composer will pull the original [Sybio/GifCreator](https://github.com/Sybio/GifCreator) and you will not be able to chain methods on gif files after first save().
 ```json
 {
 	"repositories": [
