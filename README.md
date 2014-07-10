@@ -29,14 +29,16 @@ The package uses:
 To install through composer, put the following in your `composer.json` file:
 
 ```json
-"repositories": [
-    {
-        "type": "git",
-        "url": "https://github.com/glukash/GifCreator"
-    }
-],
-"require": {
-	"glukash/glu-image": "0.*"
+{
+	"repositories": [
+	    {
+	        "type": "git",
+	        "url": "https://github.com/glukash/GifCreator"
+	    }
+	],
+	"require": {
+		"glukash/glu-image": "0.*"
+	}
 }
 ```
 
