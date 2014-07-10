@@ -93,7 +93,6 @@ This is not a necessary step for using `GluImage`.
 ## Code Examples
 
 ```php
-
 $img = GluImage::get( $path_to_images.'/01.jpg' );
 $img->resize(540,360);
 $img->save( $path_to_images.'/01-resized.jpg' );
