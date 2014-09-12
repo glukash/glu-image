@@ -1,6 +1,6 @@
 <?php namespace Glukash\GluImage;
 
-use GifFrameExtractor\GifFrameExtractor;
+use GifFrameExtractor\GifFrameExtc xractor;
 use GifCreator\GifCreator;
 use Intervention\Image\ImageManager as InterImage;
 
