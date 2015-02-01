@@ -132,6 +132,32 @@ class GluImage {
 	}
 
 	/**
+	 * resize animated gif's frames canvas
+	 * @param  [type] $width  [description]
+	 * @param  [type] $height [description]
+	 * @param  [type] $position [description]
+	 * @param  [type] $relative [description]
+	 * @param  [type] $bgcolor [description]
+	 * @return [type]         [description]
+	 */
+
+	protected function _resizeCanvasAnimated($width=null, $height=null,$position='center',$relative=false,$bgcolor='ffffff')
+	{
+
+		$framesProcessed = array();
+		foreach ($this->frames as $frame) {
+			$this->imgFileRes = $this->interImage->make($frame['image'])->resizeCanvas($width, $height, $position, false, $bgcolor);;
+			$frameProcessed=array(
+				'image'=>$this->imgFileRes->getCore(),
+				'duration'=>$frame['duration']
+			);
+
+			$framesProcessed[] = $frameProcessed;
+		}
+		$this->frames = $framesProcessed;
+	}
+
+	/**
 	 * crop image
 	 * @param  [type] $width  [description]
 	 * @param  [type] $height [description]
